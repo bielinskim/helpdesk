@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Ksiazka</title>
+</head>
+<body>
+<p th:text="${book.title}"/>
+<p th:text="${book.author}"/>
+<p th:text="${#temporals.format(book.releaseDate, 'dd-MM-yyyy')}"/>
+<p th:text="${#numbers.formatDecimal(book.price,2,2)}"/>
+<p th:text="${book.bestseller}"/>
+<p th:text="${book.coverType.name}"/>
+
+<a href="/list">Lista ksiazek</a>
+</body>
+</html>

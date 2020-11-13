@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<br>
+Lista ksiazek
+</br>
+<table>
+<tr>
+    <th>Tytul</th>
+    <th>Autor</th>
+    <th>Data</th>
+    <th>Cena</th>
+    <th>Bestseller</th>
+    <th>Okladka</th>
+    <th></th>
+    <th></th>
+</tr>
+<div th:unless="${#lists.isEmpty(books)}" th:each="book :${books}" th:object="${book}">
+        <tr>
+    <td th:text="*{title}">
+    <td th:text="*{author}"/>
+    <td th:text="*{#temporals.format(releaseDate, 'dd-MM-yyyy')}"/>
+    <td th:text="*{#numbers.formatDecimal(price,2,2)}"/>
+    <td th:text="*{bestseller}"/>
+            <td th:text="*{coverType.name}"/>
+            <td><a th:href="@{/showForm/{id}(id=*{id})}">Edytuj</a></td>
+            <td>Usun</td>
+        </tr>
+</div>
+    </table>
+</br>
+<a th:href="@{showForm}">Dodaj</a>
+</br>
+<span th:if="${#lists.isEmpty(books)}">Brak ksiazek</span>
+</br>
+
+<a th:href="@{/}">Powrot</a>
+
+</br>
+
+</body>
+</html>
