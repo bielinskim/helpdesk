@@ -86,6 +86,12 @@ public class BookController {
         book.setCoverType(coverType.get());
         if(!eid.isPresent()) {
             bookList.add(book);
+        } else {
+            for(int i=0; i<bookList.size(); i++) {
+                if(bookList.get(i).getId() == eid.get()) {
+                    bookList.set(i, book);
+                }
+            }
         }
         return "book";
 
