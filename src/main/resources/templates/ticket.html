@@ -1,0 +1,18 @@
+<div
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="shared/layout"
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:th="http://www.thymeleaf.org">
+<div layout:fragment="content">
+    <div th:object="${ticket}">
+        Imię: <p th:text="*{firstName}"/>
+        Nazwisko: <p th:text="*{lastName}"/>
+        Adres email: <p th:text="*{emailAddress}"/>
+        Numer telefonu: <p th:text="*{phoneNumber}"/>
+        Kategoria: <p th:text="*{category.name}"/>
+        Tytuł: <p th:text="*{title}"/>
+        Treść: <p th:text="*{description}"/>
+        Data utworzenia: <p th:text="*{#dates.format(createdDate, 'dd-MM-yyyy HH:mm')}"/>
+    </div>
+</div>
+</div>

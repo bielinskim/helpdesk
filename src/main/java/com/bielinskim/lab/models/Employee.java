@@ -1,15 +1,22 @@
 package com.bielinskim.lab.models;
 
-public class CoverType {
+public class Employee {
 
-    long id;
+    int id;
     String name;
 
-    public long getId() {
+    public Employee() { }
+
+    public Employee(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -21,11 +28,4 @@ public class CoverType {
         this.name = name;
     }
 
-    public CoverType() {
-    }
-
-    public CoverType(long id, String name) {
-        this.id = id;
-        this.name = name;
-    }
 }

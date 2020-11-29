@@ -1,0 +1,37 @@
+<div
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="shared/layout"
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:th="http://www.thymeleaf.org"
+>
+<div layout:fragment="content">
+    <table class="table table-hover tickets-table">
+        <thead class="tickets-table-header">
+        <tr>
+            <th>Kategoria</th>
+            <th>Tytuł</th>
+            <th>Zgłaszający</th>
+            <th>Data</th>
+            <th>Priorytet</th>
+            <th>Status</th>
+            <th>Przydzielony</th>
+        </tr>
+        </thead>
+        <tbody>
+        <div th:unless="${#lists.isEmpty(tickets)}" th:each="ticket :${tickets}" th:object="${ticket}">
+            <tr class="tickets-table-row" th:onclick="'window.location.href = \'' + @{/editTicket(id=*{id})} + '\''">
+
+                <td th:text="*{category.name}"/>
+                <td th:text="*{title}"/>
+                <td th:text="*{firstName + ' ' + lastName}">
+                <td th:text="*{#dates.format(createdDate, 'yyyy-MM-dd HH:mm')}"/>
+                <td th:text="*{priority.name}">
+                <td th:text="*{status.name}"/>
+                <td th:text="*{employee.name}"/>
+            </tr>
+        </div>
+        <tbody>
+    </table>
+    <span th:if="${#lists.isEmpty(tickets)}">Brak zgłoszeń</span>
+</div>
+</div>

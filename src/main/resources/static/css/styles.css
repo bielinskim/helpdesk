@@ -1,0 +1,66 @@
+* {
+    font-family: Lato;
+}
+.section{
+    width: 70%;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 70px;
+}
+.navbar-icon {
+    margin-right: 5px;
+}
+.main-nav-container, .knowledge-base-nav-container {
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+.navbar-brand i {
+    font-size: 30px;
+}
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+a:hover {
+    color: inherit;
+    text-decoration: inherit;
+}
+.main-nav-item {
+    display: inline-block;
+    width: 20%;
+    height: 30%;
+    border-radius: 30px;
+    padding: 15px;
+    cursor: pointer;
+}
+.main-nav-item:hover {
+    border: 1px solid #BDC3C7;
+}
+.main-nav-icon {
+    width: 100%;
+    font-size: 70px;
+    margin-bottom: 10px;
+}
+.add-ticket-form-container, edit-ticket-form-container {
+    width: 50%;
+    margin: 0 auto;
+}
+.add-ticket-submit-button, edit-ticket-submit-button {
+    display: block;
+    width: 30%;
+    margin: 0 auto;
+}
+.tickets-table-header {
+    background-color: #ececec;
+}
+.tickets-table-row {
+    cursor: pointer;
+}
+.helpdesk-footer {
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    background-color: #f7f7f7;
+}

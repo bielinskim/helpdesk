@@ -1,0 +1,49 @@
+<div
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="shared/layout"
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:th="http://www.thymeleaf.org">
+    <div layout:fragment="content">
+        <div class="edit-ticket-form-container">
+            <form th:method="POST" th:object="${ticket}">
+                Imię: <p th:text="*{firstName}"/>
+                Nazwisko: <p th:text="*{lastName}"/>
+                Adres email: <p th:text="*{emailAddress}"/>
+                Numer telefonu: <p th:text="*{phoneNumber}"/>
+                Kategoria: <p th:text="*{category.name}"/>
+                Tytuł: <p th:text="*{title}"/>
+                Treść: <p th:text="*{description}"/>
+                Data utworzenia: <p th:text="*{#dates.format(createdDate, 'dd-MM-yyyy HH:mm')}"/>
+                <div class="form-group">
+                    <label>Priorytet</label>
+                    <select class="form-control" th:field="*{priority.id}">
+                        <option th:each="prio : ${priorities}"
+                                th:value="${prio.id}"
+                                th:text=" ${prio.name}"
+                        />
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Status</label>
+                    <select class="form-control" th:field="*{status.id}">
+                        <option th:each="stat : ${statuses}"
+                                th:value="${stat.id}"
+                                th:text=" ${stat.name}"
+                        />
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Przydzielony</label>
+                    <select class="form-control" th:field="*{employee.id}">
+                        <option th:each="emp : ${employees}"
+                                th:value="${emp.id}"
+                                th:text=" ${emp.name}"
+                        />
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary edit-ticket-submit-button">Aktualizuj</button>
+                <a href="/tickets" class="btn" role="button">Wróć</a>
+            </form>
+        </div>
+    </div>
+</div>

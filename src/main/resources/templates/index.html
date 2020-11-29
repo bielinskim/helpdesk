@@ -1,15 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Main</title>
-</head>
-<body>
-Strona główna
-<a href="page1.html">Strona 1</a>
-<a href="page2">Strona 2</a>
-<a href="page3">Strona 3</a>
-<a href="book">Ksiazka</a>
-<a href="list">Lista ksiazek</a>
-</body>
-</html>
+<div
+        lang="en"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="shared/layout"
+>
+    <div layout:fragment="content">
+        <div class="main-nav-container">
+            <a href="/knowledgeBase"><div class="main-nav-item" ><i class="fal fa-book-open main-nav-icon"></i>Baza wiedzy</div></a>
+            <a href="/addTicket"><div class="main-nav-item" ><i class="fal fa-envelope main-nav-icon"></i>Wyślij zgłoszenie</div></a>
+        </div>
+    </div>
+</div>

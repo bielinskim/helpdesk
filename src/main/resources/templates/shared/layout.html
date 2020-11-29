@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Helpdesk</title>
+    <div th:replace="shared/fragments :: header-css"/>
+</head>
+<body>
+<div th:replace="~{shared/fragments :: menu(${view})}"></div>
+    <div class="section" layout:fragment="content"></div>
+    <div th:replace="shared/fragments :: footer"></div>
+</body>
+</html>

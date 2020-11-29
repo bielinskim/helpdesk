@@ -1,0 +1,52 @@
+<div
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="shared/layout"
+        xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<div layout:fragment="content">
+    <div class="add-ticket-form-container">
+<form th:method="POST" th:object="${ticket}">
+    <div class="form-group">
+        <label>Imię</label>
+        <input class="form-control" th:classappend="${#fields.hasErrors('firstName')}?'is-invalid'" type="text" th:field="*{firstName}"/>
+        <p class="invalid-feedback" th:if="${#fields.hasErrors('firstName')}" th:each="err : ${#fields.errors('firstName')}" th:text="${err}"></p>
+    </div>
+    <div class="form-group">
+        <label>Nazwisko</label>
+        <input class="form-control" th:classappend="${#fields.hasErrors('lastName')}?'is-invalid'" type="text" th:field="*{lastName}"/>
+        <p class="invalid-feedback" th:if="${#fields.hasErrors('lastName')}" th:each="err : ${#fields.errors('lastName')}" th:text="${err}"></p>
+    </div>
+    <div class="form-group">
+        <label>Adres email</label>
+        <input class="form-control" th:classappend="${#fields.hasErrors('emailAddress')}?'is-invalid'" type="text" th:field="*{emailAddress}"/>
+        <p class="invalid-feedback" th:if="${#fields.hasErrors('emailAddress')}" th:each="err : ${#fields.errors('emailAddress')}" th:text="${err}"></p>
+    </div>
+    <div class="form-group">
+        <label>Numer telefonu</label>
+        <input class="form-control" th:classappend="${#fields.hasErrors('phoneNumber')}?'is-invalid'" type="text" th:field="*{phoneNumber}"/>
+        <p class="invalid-feedback" th:if="${#fields.hasErrors('phoneNumber')}" th:each="err : ${#fields.errors('phoneNumber')}" th:text="${err}"></p>
+    </div>
+    <div class="form-group">
+    <label>Kategoria</label>
+     <select class="form-control" th:field="*{category.id}">
+    <option th:each="category : ${categories}"
+            th:value="${category.id}"
+            th:text=" ${category.name}"
+    />
+    </select>
+    </div>
+    <div class="form-group">
+        <label>Tytuł</label>
+        <input class="form-control" th:classappend="${#fields.hasErrors('title')}?'is-invalid'" type="text" th:field="*{title}">
+        <p class="invalid-feedback" th:if="${#fields.hasErrors('title')}" th:each="err : ${#fields.errors('title')}" th:text="${err}"></p>
+    </div>
+    <div class="form-group">
+        <label>Treść</label>
+        <textarea class="form-control" th:classappend="${#fields.hasErrors('description')}?'is-invalid'" rows="4" cols="50" th:field="*{description}"/>
+        <p class="invalid-feedback" th:if="${#fields.hasErrors('description')}" th:each="err : ${#fields.errors('description')}" th:text="${err}"></p>
+    </div>
+    <button type="submit" class="btn btn-primary add-ticket-submit-button">Wyślij</button>
+</form>
+    </div>
+</div>
+</div>
