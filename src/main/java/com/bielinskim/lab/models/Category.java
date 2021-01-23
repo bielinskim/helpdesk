@@ -1,11 +1,21 @@
 package com.bielinskim.lab.models;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "categories")
 public class Category {
 
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     int id;
     String name;
 
     public Category() { }
+
+    public Category(String name) {
+        this.name = name;
+    }
 
     public Category(int id, String name) {
         this.id = id;

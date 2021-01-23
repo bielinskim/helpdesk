@@ -1,13 +1,15 @@
 <div xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+>
 
     <div th:fragment="header-css">
         <link rel="stylesheet" type="text/css"
-              th:href="@{/webjars/bootstrap/4.5.3/css/bootstrap.min.css}"/>
+              th:href="@{/static/css/bootstrap.min.css}"/>
         <link rel="stylesheet" type="text/css"
-              th:href="@{/css/styles.css}"/>
+              th:href="@{/static/css/styles.css}"/>
         <link rel="stylesheet" type="text/css"
-              th:href="@{/css/fontawesome/css/all.css}"/>
+              th:href="@{/static/css/fontawesome/css/all.css}"/>
         <!--    <script src="webjars/jquery/1.9.1/jquery.min.js"></script>-->
         <!--    <script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>-->
     </div>
@@ -15,13 +17,22 @@
 <div th:fragment="menu(params)">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="/"><i class="fal fa-user-headset navbar-icon"></i>Helpdesk</a>
-        <div class="collapse navbar-collapse">
+        <div class="collapse navbar-collapse mr-auto">
             <div class="navbar-nav">
                 <a class="nav-link" th:classappend="${params eq 'home'}?'active'" href="/">Home</a>
                 <a class="nav-link" th:classappend="${params eq 'knowledgeBase'}?'active'" href="/knowledgeBase">Baza wiedzy</a>
-                <a class="nav-link" th:classappend="${params eq 'addTicket'}?'active'" href="/addTicket">Wyślij zgłoszenie</a>
-                <a class="nav-link" th:classappend="${params eq 'tickets'}?'active'" href="/tickets">Lista zgloszeń</a>
+                <a class="nav-link" sec:authorize="hasAnyRole('ADMIN', 'USER')" th:classappend="${params eq 'addTicket'}?'active'" href="/addTicket">Wyślij zgłoszenie</a>
+                <a class="nav-link" sec:authorize="hasAnyRole('ADMIN', 'EMPLOYEE')" th:classappend="${params eq 'tickets'}?'active'" href="/tickets">Lista zgloszeń</a>
             </div>
+        </div>
+        <div>
+        <div sec:authorize="!isAuthenticated()">
+            <a class="nav-link" href="/login">Zaloguj się</a>
+        </div>
+        <div class="nav-bar-logged" sec:authorize="isAuthenticated()">
+            Witaj <div sec:authentication="name"/>!
+            <a  class="nav-link" href="/logout">Wyloguj się</a>
+        </div>
         </div>
     </nav>
 </div>

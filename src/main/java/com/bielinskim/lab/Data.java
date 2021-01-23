@@ -23,33 +23,33 @@ import java.util.List;
         priorities = new ArrayList<>();
         employees = new ArrayList<>();
 
-        categories.add(new Category(1, "Bezpieczeństwo"));
-        categories.add(new Category(2, "Konto"));
-        categories.add(new Category(3, "Płatności"));
-        categories.add(new Category(4, "Usługi"));
-        categories.add(new Category(5, "Reklamacja"));
-        categories.add(new Category(6, "Awaria"));
-        categories.add(new Category(7, "Panel klienta"));
-        categories.add(new Category(8, "Inne"));
+        categories.add(new Category( "Bezpieczeństwo"));
+        categories.add(new Category( "Konto"));
+        categories.add(new Category( "Płatności"));
+        categories.add(new Category( "Usługi"));
+        categories.add(new Category( "Reklamacja"));
+        categories.add(new Category( "Awaria"));
+        categories.add(new Category( "Panel klienta"));
+        categories.add(new Category("Inne"));
 
-        statuses.add(new Status(1, "Zgłoszone"));
-        statuses.add(new Status(2, "Przydzielone"));
-        statuses.add(new Status(3, "W trakcie"));
-        statuses.add(new Status(4, "Zakończone"));
+        statuses.add(new Status("Zgłoszone"));
+        statuses.add(new Status( "Przydzielone"));
+        statuses.add(new Status( "W trakcie"));
+        statuses.add(new Status( "Zakończone"));
 
-        priorities.add(new Priority(1, "Brak"));
-        priorities.add(new Priority(2, "Niski"));
-        priorities.add(new Priority(3, "Średni"));
-        priorities.add(new Priority(4, "Wysoki"));
+        priorities.add(new Priority("Brak"));
+        priorities.add(new Priority("Niski"));
+        priorities.add(new Priority( "Średni"));
+        priorities.add(new Priority( "Wysoki"));
 
-        employees.add(new Employee(1, "Sebastian Marcinkowski"));
-        employees.add(new Employee(2, "Aleksander Domański "));
-        employees.add(new Employee(3, "Hanna Borkowska"));
-        employees.add(new Employee(4, "Mateusz Dąbrowski"));
+        employees.add(new Employee("Sebastian Marcinkowski"));
+        employees.add(new Employee("Aleksander Domański "));
+        employees.add(new Employee( "Hanna Borkowska"));
+        employees.add(new Employee("Mateusz Dąbrowski"));
 
-        tickets.add(new Ticket(getTicketId(), "Kacper", "Kowalski",  "test123@gmail.com", "555-555-555", new Category(3, "Płatności"), "Title1", "Desc1", new Status(1, "Zgłoszone"), new Priority(4, "Wysoki")));
-        tickets.add(new Ticket(getTicketId(), "Paweł", "Nowak",  "test123@gmail.com", "555-555-555", new Category(6, "Awaria"), "Title2", "Desc2", new Status(3, "W trakcie"), new Priority(4, "Wysoki")));
-        tickets.add(new Ticket(getTicketId(), "Adam", "Lewandowski",  "test123@gmail.com", "555-555-555", new Category(3, "Płatności"), "Title3", "Desc3", new Status(4, "Zakończone"), new Priority(4, "Wysoki")));
+        tickets.add(new Ticket("Kacper", "Kowalski",  "test123@gmail.com", "555-555-555", new Category(3, "Płatności"), "Title1", "Desc1", new Status(1, "Zgłoszone"), new Priority(4, "Wysoki")));
+        tickets.add(new Ticket( "Paweł", "Nowak",  "test123@gmail.com", "555-555-555", new Category(6, "Awaria"), "Title2", "Desc2", new Status(3, "W trakcie"), new Priority(4, "Wysoki")));
+        tickets.add(new Ticket( "Adam", "Lewandowski",  "test123@gmail.com", "555-555-555", new Category(3, "Płatności"), "Title3", "Desc3", new Status(4, "Zakończone"), new Priority(4, "Wysoki")));
 
     }
     public static int getTicketId() {

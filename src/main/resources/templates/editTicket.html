@@ -4,6 +4,7 @@
         xmlns="http://www.w3.org/1999/xhtml"
         xmlns:th="http://www.thymeleaf.org">
     <div layout:fragment="content">
+        <h1 class="fs-1">Edytuj zgłoszenie</h1>
         <div class="edit-ticket-form-container">
             <form th:method="POST" th:object="${ticket}">
                 Imię: <p th:text="*{firstName}"/>

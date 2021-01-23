@@ -2,17 +2,18 @@
         lang="en"
         xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
         layout:decorate="shared/layout"
+        xmlns:th="http://www.thymeleaf.org"
 >
     <div layout:fragment="content">
         <div class="knowledge-base-nav-container">
-            <div class="main-nav-item"><i class="fal fa-user-shield main-nav-icon"></i>Bezpieczenstwo</div>
-            <div class="main-nav-item"><i class="fal fa-user main-nav-icon"></i>Konto</div>
-            <div class="main-nav-item"><i class="fal fa-cash-register main-nav-icon"></i>Płatności</div>
-            <div class="main-nav-item"><i class="fal fa-server main-nav-icon"></i>Usługi</div>
-            <div class="main-nav-item"><i class="fal fa-fragile main-nav-icon"></i>Reklamacja</div>
-            <div class="main-nav-item"><i class="fal fa-car-crash main-nav-icon"></i>Awaria</div>
-            <div class="main-nav-item"><i class="fal fa-sliders-h main-nav-icon"></i>Panel klienta</div>
-            <div class="main-nav-item"><i class="fal fa-question main-nav-icon"></i>Inne</div>
+            <a th:href="@{/knowledgeBase/safety}"><div class="main-nav-item"><i class="fal fa-user-shield main-nav-icon"></i>Bezpieczenstwo</div></a>
+            <a th:href="@{/knowledgeBase/account}"><div class="main-nav-item"><i class="fal fa-user main-nav-icon"></i>Konto</div></a>
+            <a th:href="@{/knowledgeBase/payment}"><div class="main-nav-item"><i class="fal fa-cash-register main-nav-icon"></i>Płatności</div></a>
+            <a th:href="@{/knowledgeBase/services}"><div class="main-nav-item"><i class="fal fa-server main-nav-icon"></i>Usługi</div></a>
+            <a th:href="@{/knowledgeBase/reclamation}"><div class="main-nav-item"><i class="fal fa-fragile main-nav-icon"></i>Reklamacja</div></a>
+            <a th:href="@{/knowledgeBase/accident}"><div class="main-nav-item"><i class="fal fa-car-crash main-nav-icon"></i>Awaria</div></a>
+            <a th:href="@{/knowledgeBase/customer_panel}"><div class="main-nav-item"><i class="fal fa-sliders-h main-nav-icon"></i>Panel klienta</div></a>
+            <a th:href="@{/knowledgeBase/others}"><div class="main-nav-item"><i class="fal fa-question main-nav-icon"></i>Inne</div></a>
         </div>
     </div>
 </div>

@@ -42,11 +42,17 @@ a:hover {
     font-size: 70px;
     margin-bottom: 10px;
 }
-.add-ticket-form-container, edit-ticket-form-container {
+.title-nav-icon {
+    float: left;
+    font-size: 40px;
+    margin-bottom: 10px;
+    margin-bottom: 10px;
+}
+.add-ticket-form-container, edit-ticket-form-container, .login-form-container {
     width: 50%;
     margin: 0 auto;
 }
-.add-ticket-submit-button, edit-ticket-submit-button {
+.add-ticket-submit-button, edit-ticket-submit-button, .login-form-container-button {
     display: block;
     width: 30%;
     margin: 0 auto;
@@ -63,4 +69,7 @@ a:hover {
     width: 100%;
     text-align: center;
     background-color: #f7f7f7;
+}
+.nav-bar-logged a, .nav-bar-logged div {
+    display: inline-block;
 }

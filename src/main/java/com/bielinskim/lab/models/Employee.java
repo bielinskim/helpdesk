@@ -1,11 +1,21 @@
 package com.bielinskim.lab.models;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "employees")
 public class Employee {
 
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     int id;
     String name;
 
     public Employee() { }
+
+    public Employee(String name) {
+        this.name = name;
+    }
 
     public Employee(int id, String name) {
         this.id = id;

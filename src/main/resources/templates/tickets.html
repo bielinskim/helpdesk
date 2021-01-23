@@ -5,6 +5,7 @@
         xmlns:th="http://www.thymeleaf.org"
 >
 <div layout:fragment="content">
+    <h1 class="fs-1">Zgłoszenia</h1>
     <table class="table table-hover tickets-table">
         <thead class="tickets-table-header">
         <tr>
@@ -25,9 +26,12 @@
                 <td th:text="*{title}"/>
                 <td th:text="*{firstName + ' ' + lastName}">
                 <td th:text="*{#dates.format(createdDate, 'yyyy-MM-dd HH:mm')}"/>
-                <td th:text="*{priority.name}">
-                <td th:text="*{status.name}"/>
-                <td th:text="*{employee.name}"/>
+                <td th:if="*{priority!=null}" th:text="*{priority.name}"/>
+                <td th:if="*{priority==null}"></td>
+                <td th:if="*{status!=null}" th:text="*{status.name}"/>
+                <td th:if="*{status==null}"></td>
+                <td th:if="*{employee!=null}" th:text="*{employee.name}"/>
+                <td th:if="*{employee==null}"></td>
             </tr>
         </div>
         <tbody>

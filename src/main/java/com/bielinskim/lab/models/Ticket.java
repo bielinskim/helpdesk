@@ -1,11 +1,18 @@
 package com.bielinskim.lab.models;
 
 
+
+
+import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.util.Date;
 
+@Entity
+@Table(name = "tickets")
 public class Ticket {
 
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     int id;
 
     //@NotBlank
@@ -28,6 +35,7 @@ public class Ticket {
     @Pattern(regexp="(?<!\\w)(\\(?(\\+|00)?48\\)?)?[ -]?\\d{3}[ -]?\\d{3}[ -]?\\d{3}(?!\\w)")
     String phoneNumber;
 
+    @ManyToOne(fetch = FetchType.LAZY)
     Category category;
 
     @NotEmpty
@@ -38,16 +46,28 @@ public class Ticket {
     @Size(min=5, max=2000)
     String description;
 
+    @ManyToOne(fetch = FetchType.LAZY)
     Status status;
+    @ManyToOne(fetch = FetchType.LAZY)
     Priority priority;
+    @ManyToOne(fetch = FetchType.LAZY)
     Employee employee;
    Date createdDate;
 
     public Ticket() {
-        this.category = new Category();
-        this.status = new Status();
-        this.priority = new Priority();
-        this.employee = new Employee();
+        this.createdDate = new Date();
+    }
+
+    public Ticket(String firstName, String lastName, String emailAddress, String phoneNumber, Category category, String title, String description, Status status, Priority priority) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.emailAddress = emailAddress;
+        this.phoneNumber = phoneNumber;
+        this.category = category;
+        this.title = title;
+        this.description = description;
+        this.status = status;
+        this.priority = priority;
         this.createdDate = new Date();
     }
 
@@ -62,9 +82,9 @@ public class Ticket {
         this.description = description;
         this.status = status;
         this.priority = priority;
-        this.employee = new Employee();
         this.createdDate = new Date();
     }
+
 
     public int getId() {
         return id;

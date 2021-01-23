@@ -1,0 +1,64 @@
+<div
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="shared/layout"
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:th="http://www.thymeleaf.org">
+    <div layout:fragment="content">
+        <div th:if="${view.equals('safety')}">
+            <i class="fal fa-user-shield title-nav-icon"></i>
+            <h1 class="fs-1">Bezpieczeństwo</h1>
+            <p class="fs-6">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tincidunt mollis euismod. Curabitur facilisis risus at elit volutpat, nec pharetra dolor fringilla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris quis dui a nunc facilisis porttitor eu eget turpis. Proin eu euismod nunc, sed sodales lectus. Etiam sed quam sem. Quisque luctus et mi eu convallis. Sed nisi nulla, bibendum luctus felis sed, volutpat pulvinar enim. Proin et libero elementum, ultrices erat vitae, posuere velit. Proin vel orci egestas, faucibus ante eget, dictum ex. Maecenas ullamcorper iaculis sem, id molestie ligula consequat ac. Proin iaculis volutpat euismod.
+            </p>
+        </div>
+        <div th:if="${view.equals('account')}">
+            <i class="fal fa-user title-nav-icon"></i>
+            <h1 class="fs-1">Konto</h1>
+            <p class="fs-6">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tincidunt mollis euismod. Curabitur facilisis risus at elit volutpat, nec pharetra dolor fringilla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris quis dui a nunc facilisis porttitor eu eget turpis. Proin eu euismod nunc, sed sodales lectus. Etiam sed quam sem. Quisque luctus et mi eu convallis. Sed nisi nulla, bibendum luctus felis sed, volutpat pulvinar enim. Proin et libero elementum, ultrices erat vitae, posuere velit. Proin vel orci egestas, faucibus ante eget, dictum ex. Maecenas ullamcorper iaculis sem, id molestie ligula consequat ac. Proin iaculis volutpat euismod.
+            </p>
+        </div>
+        <div th:if="${view.equals('payment')}">
+            <i class="fal fa-cash-register title-nav-icon"></i>
+            <h1 class="fs-1">Płatności</h1>
+            <p class="fs-6">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tincidunt mollis euismod. Curabitur facilisis risus at elit volutpat, nec pharetra dolor fringilla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris quis dui a nunc facilisis porttitor eu eget turpis. Proin eu euismod nunc, sed sodales lectus. Etiam sed quam sem. Quisque luctus et mi eu convallis. Sed nisi nulla, bibendum luctus felis sed, volutpat pulvinar enim. Proin et libero elementum, ultrices erat vitae, posuere velit. Proin vel orci egestas, faucibus ante eget, dictum ex. Maecenas ullamcorper iaculis sem, id molestie ligula consequat ac. Proin iaculis volutpat euismod.
+            </p>
+        </div>
+        <div th:if="${view.equals('services')}">
+            <i class="fal fa-server title-nav-icon"></i>
+            <h1 class="fs-1">Usługi</h1>
+            <p class="fs-6">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tincidunt mollis euismod. Curabitur facilisis risus at elit volutpat, nec pharetra dolor fringilla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris quis dui a nunc facilisis porttitor eu eget turpis. Proin eu euismod nunc, sed sodales lectus. Etiam sed quam sem. Quisque luctus et mi eu convallis. Sed nisi nulla, bibendum luctus felis sed, volutpat pulvinar enim. Proin et libero elementum, ultrices erat vitae, posuere velit. Proin vel orci egestas, faucibus ante eget, dictum ex. Maecenas ullamcorper iaculis sem, id molestie ligula consequat ac. Proin iaculis volutpat euismod.
+            </p>
+        </div>
+        <div th:if="${view.equals('reclamation')}">
+            <i class="fal fa-fragile title-nav-icon"></i>
+            <h1 class="fs-1">Reklamacja</h1>
+            <p class="fs-6">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tincidunt mollis euismod. Curabitur facilisis risus at elit volutpat, nec pharetra dolor fringilla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris quis dui a nunc facilisis porttitor eu eget turpis. Proin eu euismod nunc, sed sodales lectus. Etiam sed quam sem. Quisque luctus et mi eu convallis. Sed nisi nulla, bibendum luctus felis sed, volutpat pulvinar enim. Proin et libero elementum, ultrices erat vitae, posuere velit. Proin vel orci egestas, faucibus ante eget, dictum ex. Maecenas ullamcorper iaculis sem, id molestie ligula consequat ac. Proin iaculis volutpat euismod.
+            </p>
+        </div>
+        <div th:if="${view.equals('accident')}">
+            <i class="fal fa-car-crash title-nav-icon"></i>
+            <h1 class="fs-1">Awaria</h1>
+            <p class="fs-6">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tincidunt mollis euismod. Curabitur facilisis risus at elit volutpat, nec pharetra dolor fringilla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris quis dui a nunc facilisis porttitor eu eget turpis. Proin eu euismod nunc, sed sodales lectus. Etiam sed quam sem. Quisque luctus et mi eu convallis. Sed nisi nulla, bibendum luctus felis sed, volutpat pulvinar enim. Proin et libero elementum, ultrices erat vitae, posuere velit. Proin vel orci egestas, faucibus ante eget, dictum ex. Maecenas ullamcorper iaculis sem, id molestie ligula consequat ac. Proin iaculis volutpat euismod.
+            </p>
+        </div>
+        <div th:if="${view.equals('customer_panel')}">
+            <i class="fal fa-sliders-h title-nav-icon"></i>
+            <h1 class="fs-1">Panel klienta</h1>
+            <p class="fs-6">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tincidunt mollis euismod. Curabitur facilisis risus at elit volutpat, nec pharetra dolor fringilla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris quis dui a nunc facilisis porttitor eu eget turpis. Proin eu euismod nunc, sed sodales lectus. Etiam sed quam sem. Quisque luctus et mi eu convallis. Sed nisi nulla, bibendum luctus felis sed, volutpat pulvinar enim. Proin et libero elementum, ultrices erat vitae, posuere velit. Proin vel orci egestas, faucibus ante eget, dictum ex. Maecenas ullamcorper iaculis sem, id molestie ligula consequat ac. Proin iaculis volutpat euismod.
+            </p>
+        </div>
+        <div th:if="${view.equals('others')}">
+            <i class="fal fa-question title-nav-icon"></i>
+            <h1 class="fs-1">Inne</h1>
+            <p class="fs-6">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tincidunt mollis euismod. Curabitur facilisis risus at elit volutpat, nec pharetra dolor fringilla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris quis dui a nunc facilisis porttitor eu eget turpis. Proin eu euismod nunc, sed sodales lectus. Etiam sed quam sem. Quisque luctus et mi eu convallis. Sed nisi nulla, bibendum luctus felis sed, volutpat pulvinar enim. Proin et libero elementum, ultrices erat vitae, posuere velit. Proin vel orci egestas, faucibus ante eget, dictum ex. Maecenas ullamcorper iaculis sem, id molestie ligula consequat ac. Proin iaculis volutpat euismod.
+            </p>
+        </div>
+    </div>
+</div>
